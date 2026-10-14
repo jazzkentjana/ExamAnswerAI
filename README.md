@@ -11,6 +11,10 @@ ExamAnswerAI is a lightweight browser extension that reads multiple-choice quest
   <img src="demo.gif" alt="ExamAnswerAI Demo" width="100%" />
 </p>
 
+> 💡 **Notice in the demo:** Pay attention to the top-right corner when `Backspace` (the trigger key) is pressed:
+> - **Fading black dot** = The AI is **thinking** (reading the question offscreen).
+> - **Blinking red dot** = The **answer** (in this example, **3× blinking = Option C**)!
+
 ---
 
 ## 🎯 How It Works
