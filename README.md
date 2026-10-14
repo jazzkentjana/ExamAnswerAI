@@ -18,7 +18,7 @@ ExamAnswerAI is a lightweight browser extension that reads multiple-choice quest
 ## 🎯 How It Works
 
 1. **Aim with Your Cursor:** Hover your mouse near the multiple-choice question you want answered.
-2. **Press Backspace:** Hit `Backspace` (or `Alt + X` / `Option + X`) to trigger.
+2. **Press Backspace:** Hit `Backspace` to trigger.
 3. **Offscreen Screenshot & Targeting:** The extension captures the visible tab offscreen and draws a bright crosshair at your cursor position on the hidden image so the AI knows exactly which question you are looking at—even on multi-question pages.
 4. **Thinking Phase:** A subtle dot in the top-right corner fades in and out in **black** while the AI reads and reasons through the choices.
 5. **Answer Signal:** The dot flashes in your chosen color (e.g., Bright Red) corresponding to the correct answer. Click anywhere on the page to stop the blinking.
