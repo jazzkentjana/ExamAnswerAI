@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display Helper — Setup & Free API Key Guide</title>
+  <style>
+    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: #0f1115;
+      color: #e6e8ec;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      background: #181b22;
+      border: 1px solid #282d38;
+      border-radius: 12px;
+      padding: 32px 36px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #ffffff;
+      border-bottom: 1px solid #282d38;
+      padding-bottom: 14px;
+    }
+    h2 {
+      font-size: 17px;
+      color: #93c5fd;
+      margin-top: 26px;
+      margin-bottom: 10px;
+    }
+    ol, ul {
+      padding-left: 22px;
+      margin: 8px 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code, .kbd {
+      background: #232834;
+      border: 1px solid #343b4a;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      color: #f8fafc;
+    }
+    .callout {
+      background: rgba(37, 99, 235, 0.12);
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .callout.warn {
+      background: rgba(245, 158, 11, 0.12);
+      border-left-color: #f59e0b;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .card {
+      background: #20242d;
+      border: 1px solid #2e3442;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .card strong {
+      display: block;
+      font-size: 15px;
+      color: #34d399;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Display Helper — Free API Key &amp; Setup Guide</h1>
+
+    <h2>Option A: Free Gemini API Key (Google AI Studio)</h2>
+    <ol>
+      <li>Open <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio (aistudio.google.com/app/apikey)</a> and sign in with a personal <code>@gmail.com</code> account.</li>
+      <li>Click <strong>Create API key</strong> &rarr; select <strong>Create API key in a new project</strong>, then copy the key (starts with <code>AIzaSy...</code>).</li>
+      <li>Paste it into the <strong>API Key</strong> field in the Display Helper popup and click <strong>Save Settings</strong>.</li>
+    </ol>
+
+    <div class="callout warn">
+      <strong>Fixing <code>HTTP 403: Your project has been denied access</code>:</strong><br/>
+      Google’s automated anti-abuse filter often flags new free-tier projects under these conditions:
+      <ul>
+        <li><strong>Turn OFF VPNs:</strong> Commercial VPNs or datacenter IPs trigger immediate project denial by Google.</li>
+        <li><strong>Use a Personal Gmail:</strong> School (<code>.edu</code>) and Google Workspace accounts usually block API provisioning. Use an established personal <code>@gmail.com</code> account with a verified phone number and 2-step verification.</li>
+        <li><strong>Create API key in a NEW project:</strong> In Google AI Studio, never reuse a flagged project. Always click <em>"Create API key in a new project"</em>.</li>
+        <li><strong>Verify Generative Language API is Enabled:</strong> Open <a href="https://console.cloud.google.com/apis/library/generativelanguage.googleapis.com" target="_blank" rel="noopener noreferrer">Google Cloud Console API Library</a>, select your project, and ensure <strong>Generative Language API</strong> is set to <strong>Enabled</strong>.</li>
+      </ul>
+    </div>
+
+    <h2>Option B: 30-Second Free Groq API Key (Fastest &amp; Zero Risk of Blocks)</h2>
+    <p>If Google AI Studio gives you 403 errors, Groq is 100% free, requires NO billing setup, and solves questions in under 400ms using state-of-the-art vision models (Qwen 3.8 Vision &amp; Llama 3.2 Vision):</p>
+    <ol>
+      <li>Open <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">Groq Cloud Console (console.groq.com/keys)</a> and sign in with Google or GitHub (100% free).</li>
+      <li>Click <strong>Create API Key</strong>, type any name (like <code>helper</code>), and copy the key (starts with <code>gsk_...</code>).</li>
+      <li>Paste that <code>gsk_...</code> key into the <strong>API Key</strong> box in the popup—the extension automatically detects <code>gsk_</code> keys and routes requests through Groq's blazing fast LPU inference!</li>
+    </ol>
+
+    <h2>Step 2: Choose Your Blink Signal Location</h2>
+    <ul>
+      <li><strong>Webpage Dot:</strong> Blinks a dot (<code>2×2</code> up to <code>6×6</code> px) in the top-right corner of the webpage.</li>
+      <li><strong>Toolbar Icon:</strong> Blinks the pinned extension icon and badge right in the Microsoft Edge toolbar.</li>
+      <li><strong>Both:</strong> Blinks both the webpage top-right dot and the pinned toolbar icon simultaneously.</li>
+    </ul>
+
+    <h2>Step 3: How to Trigger &amp; Read Signals</h2>
+    <ol>
+      <li>Toggle the switch at the top-right of the extension popup to <strong>ON</strong> and refresh your quiz tab once (<span class="kbd">Cmd + R</span> or <span class="kbd">F5</span>).</li>
+      <li>Hover your mouse cursor near the question you want answered and press <span class="kbd">Backspace</span> (or <span class="kbd">Option + X</span> / <span class="kbd">Alt + X</span>).</li>
+      <li><strong>Thinking Signal:</strong> The dot fades in and out in <strong>black</strong> while the AI reads the question.</li>
+      <li><strong>Answer Signal:</strong> Once solved, it switches to your <strong>Answer Blink Color</strong> (e.g., Bright Red) and flashes 1–5 times, pauses for 2 seconds, and repeats until you click anywhere on the page:</li>
+    </ol>
+
+    <div class="grid">
+      <div class="card"><strong>1 × Flash</strong>Option A (1st)</div>
+      <div class="card"><strong>2 × Flashes</strong>Option B (2nd)</div>
+      <div class="card"><strong>3 × Flashes</strong>Option C (3rd)</div>
+      <div class="card"><strong>4 × Flashes</strong>Option D (4th)</div>
+      <div class="card"><strong>5 × Flashes</strong>Option E (5th)</div>
+    </div>
+  </div>
+</body>
+</html>

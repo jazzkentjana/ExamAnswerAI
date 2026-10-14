@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Display Helper Settings</title>
+  <style>
+    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      width: 325px;
+      margin: 0;
+      padding: 14px;
+      background: #181a1f;
+      color: #e6e8ec;
+      font-size: 13px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #2b2f38;
+      margin-bottom: 12px;
+    }
+    .title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .help-btn {
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 99px;
+      border: 1px solid #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      cursor: pointer;
+      flex: none;
+    }
+    .help-btn:hover {
+      background: rgba(59, 130, 246, 0.28);
+    }
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-pill {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 99px;
+      font-weight: 600;
+      background: #2b2f38;
+      color: #9aa0ac;
+    }
+    .status-pill.on {
+      background: rgba(52, 211, 153, 0.16);
+      color: #34d399;
+    }
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #34d399;
+    }
+    .field {
+      margin-bottom: 10px;
+    }
+    .field-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    label {
+      display: block;
+      font-size: 11.5px;
+      color: #9aa0ac;
+      margin-bottom: 4px;
+    }
+    .field-header label {
+      margin-bottom: 0;
+    }
+    .inline-link {
+      font-size: 11px;
+      color: #60a5fa;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .inline-link:hover {
+      text-decoration: underline;
+    }
+    input[type="password"], input[type="text"], select {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 6px;
+      border: 1px solid #2f3542;
+      background: #22262e;
+      color: #e6e8ec;
+      font-size: 12.5px;
+      outline: none;
+    }
+    input[type="password"]:focus, input[type="text"]:focus, select:focus {
+      border-color: #60a5fa;
+    }
+    .seg-group {
+      display: flex;
+      background: #22262e;
+      border: 1px solid #2f3542;
+      border-radius: 6px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .seg-btn {
+      flex: 1;
+      padding: 5px 6px;
+      font-size: 11.5px;
+      border: none;
+      border-radius: 4px;
+      background: transparent;
+      color: #9aa0ac;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .seg-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: #e6e8ec;
+    }
+    .seg-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+    }
+    .row .field {
+      flex: 1;
+    }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    button.action-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border: 1px solid #353b48;
+      border-radius: 6px;
+      background: #262b35;
+      color: #e6e8ec;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button.action-btn:hover {
+      background: #303744;
+    }
+    button.action-btn.primary {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+    button.action-btn.primary:hover {
+      background: #1d4ed8;
+    }
+    .status-box {
+      margin-top: 10px;
+      font-size: 11px;
+      line-height: 1.35;
+      color: #c9d1d9;
+      background: #121418;
+      border: 1px solid #2b2f38;
+      padding: 7px 8px;
+      border-radius: 6px;
+      word-break: break-word;
+    }
+    .status-label {
+      color: #7d8590;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .hint {
+      margin-top: 8px;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #8c93a0;
+      background: #20232b;
+      padding: 8px;
+      border-radius: 6px;
+    }
+    .saved-msg {
+      font-size: 11px;
+      color: #34d399;
+      text-align: center;
+      margin-top: 6px;
+      min-height: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <span class="title">Display Helper v1.5.3</span>
+      <button id="helpBtn" class="help-btn" title="How to get a free API key & fix 403 errors">? Help</button>
+    </div>
+    <div class="toggle-wrap">
+      <span id="statusPill" class="status-pill">OFF</span>
+      <input type="checkbox" id="enabledToggle" title="Toggle Service ON/OFF" />
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="field-header">
+      <label for="apiKey">API Key (Gemini AIza... or Free Groq gsk_...)</label>
+      <a id="howToKeyLink" class="inline-link">Get Free Key / Fix 403</a>
+    </div>
+    <input type="password" id="apiKey" placeholder="AIzaSy... or gsk_..." autocomplete="off" />
+  </div>
+
+  <div class="field">
+    <label>Blink Signal Location</label>
+    <div class="seg-group" id="blinkTargetGroup">
+      <button type="button" class="seg-btn active" data-target="webpage">Webpage Dot</button>
+      <button type="button" class="seg-btn" data-target="toolbar">Toolbar Icon</button>
+      <button type="button" class="seg-btn" data-target="both">Both</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="dotSize">Webpage Dot Size</label>
+      <select id="dotSize">
+        <option value="2">2 × 2 px</option>
+        <option value="3">3 × 3 px</option>
+        <option value="4">4 × 4 px</option>
+        <option value="5">5 × 5 px</option>
+        <option value="6">6 × 6 px</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="dotColor">Answer Blink Color</label>
+      <select id="dotColor">
+        <option value="#ff0000">Bright Red</option>
+        <option value="#787878">Neutral Gray</option>
+        <option value="#4a4a4a">Dark Charcoal</option>
+        <option value="#a0a0a0">Light Silver</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="modelSelect">Model Selection</label>
+    <select id="modelSelect">
+      <option value="auto">Auto-Detect (Tries all available models)</option>
+      <option value="gemini-3.8-flash">gemini-3.8-flash (Recommended)</option>
+      <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Fastest)</option>
+      <option value="gemini-3.1-flash-lite">gemini-3.1-flash-lite</option>
+      <option value="gemini-3-flash">gemini-3-flash</option>
+      <option value="gemini-3-flash-preview">gemini-3-flash-preview</option>
+    </select>
+  </div>
+
+  <div class="btn-row">
+    <button id="saveBtn" class="action-btn primary">Save Settings</button>
+    <button id="testBtn" class="action-btn" title="Test 3x blink using selected location">Test 3× Blink</button>
+  </div>
+  <div id="savedMsg" class="saved-msg"></div>
+
+  <div class="status-box">
+    <span class="status-label">Last Status:</span>
+    <span id="lastStatusText">Ready</span>
+    <div id="aiResponseWrap" style="margin-top:6px; display:none;">
+      <span class="status-label" style="color:#60a5fa;">AI Reasoning:</span>
+      <div id="aiResponseText" style="white-space:pre-wrap; max-height:100px; overflow-y:auto; color:#9aa0ac; font-size:10.5px; margin-top:3px; background:#181b22; padding:5px 6px; border-radius:4px; border:1px solid #2b2f38;"></div>
+    </div>
+  </div>
+
+  <div class="hint">
+    <strong>Signals when ON:</strong> Press <strong>Backspace</strong> → fades in/out <strong>black</strong> while thinking → blinks <strong>Answer Color</strong> 1–5× (click page to stop).
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
