@@ -8,9 +8,7 @@ ExamAnswerAI is a lightweight browser extension that reads multiple-choice quest
 ## 🎬 Demo
 
 <p align="center">
-  <video src="https://github.com/jazzkentjana/ExamAnswerAI/raw/main/demo.mp4" controls="controls" width="100%" autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
+  <img src="demo.gif" alt="ExamAnswerAI Demo" width="100%" />
 </p>
 
 ---
