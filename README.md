@@ -8,7 +8,11 @@ ExamAnswerAI is a lightweight browser extension that reads multiple-choice quest
 ## 🎬 Demo
 
 <p align="center">
-  <img src="demo.gif" alt="ExamAnswerAI Demo" width="100%" />
+  <img src="demo.gif" alt="ExamAnswerAI Motion Graphics Demo" width="100%" />
+</p>
+
+<p align="center">
+  🔊 <a href="demo.mp4"><strong>Watch Full HD Motion Graphics Promo with Audio &amp; Sound Effects (demo.mp4)</strong></a>
 </p>
 
 > 💡 **Notice in the demo:** Pay attention to the top-right corner when `Backspace` (the trigger key) is pressed:
